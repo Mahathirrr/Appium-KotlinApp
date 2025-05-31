@@ -1,81 +1,84 @@
-# ElektroniCare Mobile App - Appium Test Automation
+# ElektroniCare Mobile App - Automation Testing dengan Appium
 
-Proyek ini berisi automation testing untuk aplikasi mobile ElektroniCare menggunakan framework Appium dengan bahasa pemrograman Java.
+**Dibuat oleh: Muhammad Mahathir (2208107010056)**
+
+Proyek ini berisi automation testing untuk aplikasi mobile ElektroniCare menggunakan framework Appium dengan bahasa pemrograman Java dan pattern Page Object Model.
 
 ## Deskripsi Aplikasi
 
 ElektroniCare adalah aplikasi mobile berbasis Android yang menyediakan layanan perbaikan perangkat elektronik. Aplikasi ini memungkinkan pengguna untuk:
 
-- Melihat onboarding screens untuk memahami fitur aplikasi
-- Melakukan registrasi akun baru dengan validasi lengkap
-- Melakukan login dengan email/password atau Google Sign-In
-- Melihat dashboard dengan layanan yang tersedia
-- Browsing layanan perbaikan dari Firebase
-- Membuat booking untuk layanan perbaikan dengan upload gambar
-- Melihat riwayat layanan perbaikan
-- Mengelola profil pengguna (excluded dari testing sesuai permintaan)
+- Melihat splash screen dan onboarding untuk pengenalan aplikasi
+- Melakukan registrasi akun baru dengan validasi form yang lengkap
+- Melakukan login menggunakan email/password atau Google Sign-In
+- Mengakses dashboard dengan berbagai layanan yang tersedia
+- Menjelajahi layanan perbaikan yang tersimpan di Firebase
+- Membuat booking layanan perbaikan dengan upload gambar perangkat
+- Melihat riwayat layanan perbaikan yang pernah dilakukan
+- Mengelola profil pengguna
 
-## Struktur Project
+## Struktur Proyek
 
 ```
-Appium/
+Appium-KotlinApp/
 ├── src/
 │   ├── main/java/com/elektronicare/
-│   │   ├── pages/          # Page Object Model classes
+│   │   ├── pages/              # Page Object Model classes
 │   │   │   ├── BasePage.java
 │   │   │   ├── SplashPage.java
-│   │   │   ├── OnboardingPage.java    # NEW
-│   │   │   ├── WelcomePage.java       # NEW
-│   │   │   ├── RegisterPage.java      # NEW
+│   │   │   ├── OnboardingPage.java
+│   │   │   ├── WelcomePage.java
+│   │   │   ├── RegisterPage.java
 │   │   │   ├── LoginPage.java
 │   │   │   ├── DashboardPage.java
-│   │   │   ├── ServicesPage.java      # NEW
-│   │   │   ├── BookingPage.java       # UPDATED
+│   │   │   ├── ServicesPage.java
+│   │   │   ├── BookingPage.java
 │   │   │   └── HistoryPage.java
-│   │   ├── utils/          # Utility classes
-│   │   └── config/         # Configuration classes
+│   │   ├── utils/              # Utility classes
+│   │   │   ├── TestUtils.java
+│   │   │   ├── ExtentReportManager.java
+│   │   │   └── DriverManager.java
+│   │   └── config/             # Configuration classes
+│   │       └── AppiumConfig.java
 │   └── test/
 │       ├── java/com/elektronicare/
-│       │   ├── tests/      # Test classes
-│       │   │   ├── SplashTest.java
-│       │   │   ├── OnboardingTest.java    # NEW
-│       │   │   ├── WelcomeTest.java       # NEW
-│       │   │   ├── RegisterTest.java      # NEW
+│       │   ├── tests/          # Test classes
+│       │   │   ├── BaseTest.java
+│       │   │   ├── OnboardingTest.java
+│       │   │   ├── WelcomeTest.java
+│       │   │   ├── RegisterTest.java
 │       │   │   ├── LoginTest.java
 │       │   │   ├── DashboardTest.java
-│       │   │   ├── ServicesTest.java      # NEW
-│       │   │   ├── BookingTest.java
-│       │   │   └── HistoryTest.java
+│       │   │   ├── HistoryTest.java
+│       │   │   └── ProfileTest.java
 │       │   └── stepdefinitions/ # Cucumber step definitions
-│       │       ├── OnboardingSteps.java   # NEW
-│       │       ├── WelcomeSteps.java      # NEW
-│       │       └── RegisterSteps.java     # NEW
+│       │       ├── OnboardingSteps.java
+│       │       ├── WelcomeSteps.java
+│       │       └── RegisterSteps.java
 │       └── resources/
-│           ├── features/   # Cucumber feature files
-│           │   ├── onboarding.feature     # NEW
-│           │   ├── welcome.feature        # NEW
-│           │   └── register.feature       # NEW
-│           └── config/     # Test configuration files
-├── reports/               # Test reports
-├── screenshots/          # Test screenshots
-├── ElektroniCareBeta1.apk # APK file aplikasi asli
-├── ElektroniCareBeta1-Updated.apk # APK file terbaru
-├── pom.xml               # Maven dependencies
-└── README.md            # Dokumentasi ini
+│           ├── features/       # Cucumber feature files
+│           └── config/         # Test configuration files
+├── reports/                   # Test reports
+├── screenshots/              # Test screenshots
+├── app-debug.apk            # APK file aplikasi
+├── appium-inspector-config.json # Konfigurasi Appium Inspector
+├── pom.xml                  # Maven dependencies
+└── README.md               # Dokumentasi ini
 ```
 
-## Prerequisites
+## Prasyarat Sistem
 
 ### 1. Java Development Kit (JDK)
-- Install JDK 8 atau versi yang lebih baru
+- Install JDK 17 atau versi yang lebih baru
 - Set JAVA_HOME environment variable
+
 ```bash
 # Windows
-set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_XXX
+set JAVA_HOME=C:\Program Files\Java\jdk-17
 set PATH=%JAVA_HOME%\bin;%PATH%
 
 # macOS/Linux
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 
@@ -95,7 +98,7 @@ export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
 
 ### 3. Node.js dan Appium Server
 ```bash
-# Install Node.js (versi 14 atau lebih baru)
+# Install Node.js (versi 16 atau lebih baru)
 # Download dari https://nodejs.org/
 
 # Install Appium
@@ -104,28 +107,28 @@ npm install -g appium
 # Install Appium drivers
 appium driver install uiautomator2
 
-# Verify installation
+# Verifikasi instalasi
 appium --version
 appium driver list
 ```
 
-### 4. Android Emulator atau Device
+### 4. Android Emulator atau Device Fisik
 ```bash
 # Untuk emulator, buat AVD melalui Android Studio atau command line:
 avdmanager create avd -n test_device -k "system-images;android-30;google_apis;x86_64"
 
-# Untuk physical device:
-# 1. Enable Developer Options
-# 2. Enable USB Debugging
-# 3. Connect device dan verify: adb devices
+# Untuk device fisik:
+# 1. Aktifkan Developer Options
+# 2. Aktifkan USB Debugging
+# 3. Hubungkan device dan verifikasi: adb devices
 ```
 
 ## Instalasi dan Konfigurasi
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/agus-septiawan/ElektroniCareBeta1.git
-cd ElektroniCareBeta1/Appium
+git clone https://github.com/Mahathirrr/Appium-KotlinApp.git
+cd Appium-KotlinApp
 ```
 
 ### 2. Install Dependencies
@@ -141,7 +144,7 @@ Edit file `src/main/java/com/elektronicare/config/AppiumConfig.java` sesuai deng
 capabilities.setCapability("platformName", "Android");
 capabilities.setCapability("deviceName", "Your_Device_Name");
 capabilities.setCapability("platformVersion", "Your_Android_Version");
-capabilities.setCapability("app", "/path/to/ElektroniCareBeta1-Updated.apk");
+capabilities.setCapability("app", "/path/to/app-debug.apk");
 capabilities.setCapability("appPackage", "com.example.elektronicarebeta1");
 capabilities.setCapability("appActivity", "com.example.elektronicarebeta1.SplashActivity");
 ```
@@ -151,19 +154,19 @@ capabilities.setCapability("appActivity", "com.example.elektronicarebeta1.Splash
 # Start Appium server
 appium
 
-# Atau dengan specific port
+# Atau dengan port spesifik
 appium -p 4723
 
-# Dengan logging
+# Dengan logging detail
 appium --log-level debug
 ```
 
-### 5. Verify Setup
+### 5. Verifikasi Setup
 ```bash
 # Check connected devices
 adb devices
 
-# Check Appium server
+# Check Appium server status
 curl http://localhost:4723/wd/hub/status
 ```
 
@@ -184,71 +187,52 @@ mvn test -Dgroups=functional
 
 # UI tests
 mvn test -Dgroups=ui
-
-# Navigation tests
-mvn test -Dgroups=navigation
 ```
 
-### 3. Menjalankan Test Suite Specific
-```bash
-# Smoke tests only
-mvn test -DsuiteXmlFile=src/test/resources/testng.xml -Dtest.suite="Smoke Tests"
-
-# Full regression
-mvn test -DsuiteXmlFile=src/test/resources/testng.xml -Dtest.suite="Full Regression Tests"
-```
-
-### 4. Menjalankan Test Class Specific
+### 3. Menjalankan Test Class Tertentu
 ```bash
 mvn test -Dtest=OnboardingTest
 mvn test -Dtest=RegisterTest
 mvn test -Dtest=LoginTest
-mvn test -Dtest=ServicesTest
+mvn test -Dtest=DashboardTest
 ```
 
-### 5. Menjalankan Cucumber Tests
+### 4. Menjalankan Tests dengan Script
 ```bash
-mvn test -Dcucumber.options="--tags @smoke"
-mvn test -Dcucumber.options="--tags @functional"
-mvn test -Dcucumber.options="--tags @ui"
+# Linux/macOS
+./run-tests.sh
+
+# Windows
+run-tests.bat
+
+# Dengan logging
+./run-tests-with-log.sh
 ```
 
-## Test Cases Lengkap
+## Test Cases yang Tersedia
 
-### 1. Splash Screen Tests
-- **testSplashScreenDisplay**: Verifikasi tampilan splash screen dengan logo
-- **testSplashToOnboardingTransition**: Verifikasi transisi ke onboarding untuk user baru
-- **testSplashToLoginTransition**: Verifikasi transisi ke login untuk user existing
-
-### 2. Onboarding Tests (NEW)
+### 1. Onboarding Tests
 - **testOnboardingPageDisplay**: Verifikasi tampilan halaman onboarding
 - **testOnboardingNavigation**: Test navigasi menggunakan tombol Next
 - **testOnboardingSwipeNavigation**: Test navigasi menggunakan swipe gesture
 - **testOnboardingSkip**: Test fungsi skip onboarding
 - **testOnboardingComplete**: Test menyelesaikan onboarding
-- **testOnboardingIndicators**: Test page indicators
 
-### 3. Welcome Screen Tests (NEW)
+### 2. Welcome Screen Tests
 - **testWelcomePageDisplay**: Verifikasi tampilan welcome screen
 - **testWelcomePageElements**: Test elemen UI welcome screen
 - **testNavigateToRegister**: Test navigasi ke halaman register
 - **testNavigateToLogin**: Test navigasi ke halaman login
-- **testWelcomePageBranding**: Test elemen branding
 
-### 4. Registration Tests (NEW)
+### 3. Registration Tests
 - **testRegisterPageDisplay**: Verifikasi tampilan halaman register
 - **testRegisterValidation**: Test validasi form register
 - **testInvalidEmailValidation**: Test validasi email tidak valid
-- **testInvalidPhoneValidation**: Test validasi nomor telepon tidak valid
-- **testShortPasswordValidation**: Test validasi password terlalu pendek
 - **testPasswordVisibilityToggle**: Test toggle visibility password
 - **testValidRegistration**: Test registrasi dengan data valid
-- **testNavigateToLogin**: Test navigasi ke halaman login
-- **testBackNavigation**: Test navigasi kembali
 - **testGoogleSignInButton**: Test tombol Google Sign-In
-- **testPhoneNumberFormatting**: Test formatting nomor telepon
 
-### 5. Login Tests
+### 4. Login Tests
 - **testLoginPageElements**: Verifikasi elemen-elemen di halaman login
 - **testValidLogin**: Test login dengan kredensial yang valid
 - **testInvalidLogin**: Test login dengan kredensial yang tidak valid
@@ -256,47 +240,22 @@ mvn test -Dcucumber.options="--tags @ui"
 - **testPasswordVisibility**: Test toggle visibility password
 - **testGoogleSignIn**: Test Google Sign-In functionality
 
-### 6. Dashboard Tests
+### 5. Dashboard Tests
 - **testDashboardElements**: Verifikasi elemen-elemen dashboard
 - **testServiceCardNavigation**: Test navigasi melalui service cards
 - **testQuickActionButtons**: Test tombol quick action
 - **testBottomNavigation**: Test bottom navigation
 - **testWelcomeMessage**: Test tampilan welcome message
-- **testUserProfile**: Test tampilan informasi user
 
-### 7. Services Tests (NEW)
-- **testServicesPageDisplay**: Verifikasi tampilan halaman services
-- **testServicesLoading**: Test loading services dari Firebase
-- **testServiceSelection**: Test pemilihan service
-- **testServiceTypes**: Test berbagai tipe service
-- **testServicePrices**: Test tampilan harga service
-- **testBackNavigation**: Test navigasi kembali
-- **testBottomNavigation**: Test bottom navigation
-- **testServiceSearch**: Test pencarian/scroll service
-- **testMultipleServiceSelection**: Test pemilihan multiple service
-
-### 8. Booking Tests (UPDATED)
-- **testBookingPageDisplay**: Verifikasi tampilan halaman booking
-- **testServiceInfoDisplay**: Test tampilan informasi service
-- **testCompleteBookingSubmission**: Test submit booking lengkap
-- **testEmptyFieldsBooking**: Test booking dengan field kosong
-- **testDeviceTypeSelection**: Test pemilihan tipe device
-- **testDateSelection**: Test pemilihan tanggal dengan date picker
-- **testImageUpload**: Test upload gambar device
-- **testFormValidation**: Test validasi form booking
-- **testBackButton**: Test tombol back
-
-### 9. History Tests
+### 6. History Tests
 - **testHistoryPageElements**: Verifikasi elemen-elemen halaman history
 - **testFilterFunctionality**: Test fungsi filter
 - **testHistoryItemInteraction**: Test interaksi dengan item history
 - **testEmptyHistoryState**: Test state ketika history kosong
-- **testBackButton**: Test tombol back
-- **testStatusFiltering**: Test filter berdasarkan status
 
 ## Page Object Model
 
-Project ini menggunakan Page Object Model (POM) pattern untuk maintainability yang lebih baik:
+Proyek ini menggunakan Page Object Model (POM) pattern untuk maintainability yang lebih baik:
 
 ### BasePage
 Class dasar yang berisi method-method umum seperti:
@@ -307,37 +266,14 @@ Class dasar yang berisi method-method umum seperti:
 - `performSwipe()`: Swipe gesture
 - `scrollToElement()`: Scroll ke element
 
-### Specific Pages
-
-#### OnboardingPage (NEW)
-- Interaksi dengan 3 halaman onboarding (Phone, Laptop, TV Repairs)
-- Navigation dengan tombol Next/Skip
-- Swipe gesture support
-- Page indicator management
-
-#### WelcomePage (NEW)
-- Interaksi dengan welcome screen
-- Navigation ke register/login
-- Branding elements verification
-
-#### RegisterPage (NEW)
-- Form registration dengan validasi lengkap
-- Field validation (email, phone, password)
-- Google Sign-In integration
-- Password visibility toggle
-
-#### ServicesPage (NEW)
-- Loading services dari Firebase
-- Service selection dan navigation
-- Price display dan formatting
-- Search/scroll functionality
-
-#### BookingPage (UPDATED)
-- Enhanced form dengan image upload
-- Date picker integration
-- Device type selection
-- Service information display
-- Complete form validation
+### Page Classes
+Setiap halaman aplikasi memiliki class tersendiri yang mewarisi dari BasePage:
+- **OnboardingPage**: Interaksi dengan halaman onboarding
+- **WelcomePage**: Interaksi dengan welcome screen
+- **RegisterPage**: Form registration dengan validasi
+- **LoginPage**: Halaman login dan authentication
+- **DashboardPage**: Halaman utama aplikasi
+- **HistoryPage**: Halaman riwayat layanan
 
 ## Utilities
 
@@ -361,39 +297,35 @@ Mengelola Appium driver instance:
 - Driver initialization dengan capabilities
 - Driver cleanup dan session management
 - Singleton pattern implementation
-- Multi-device support
 
 ## Reporting
 
 Test reports akan di-generate di folder `reports/`:
 - **ExtentReport.html**: Detailed HTML report dengan screenshots
 - **TestNG reports**: Default TestNG reports
-- **Cucumber reports**: Cucumber HTML reports
+- **Cucumber reports**: Cucumber HTML reports (jika menggunakan Cucumber)
 - **Screenshots**: Failure dan step screenshots
 - **Logs**: Detailed execution logs
 
-## Firebase Integration Testing
+## Teknologi yang Digunakan
 
-Aplikasi menggunakan Firebase untuk:
-- **Authentication**: Email/password dan Google Sign-In
-- **Firestore**: Menyimpan data services dan bookings
-- **Storage**: Upload gambar device
-
-Test framework mendukung:
-- Mock Firebase responses untuk testing offline
-- Real Firebase integration untuk end-to-end testing
-- Data cleanup setelah testing
+- **Java 17**: Bahasa pemrograman utama
+- **Appium 9.3.0**: Mobile automation framework
+- **Selenium 4.25.0**: WebDriver untuk automation
+- **TestNG 7.10.2**: Testing framework
+- **ExtentReports 5.1.2**: Reporting framework
+- **Maven**: Build dan dependency management
+- **Cucumber**: BDD testing framework (opsional)
 
 ## Best Practices
 
 1. **Page Object Model**: Gunakan POM untuk maintainability
 2. **Explicit Waits**: Gunakan WebDriverWait untuk stability
 3. **Test Data Management**: Pisahkan test data dari test logic
-4. **Error Handling**: Implement proper exception handling dengan retry
-5. **Screenshots**: Capture screenshots untuk debugging dan reporting
-6. **Parallel Execution**: Configure untuk parallel test execution
-7. **Test Independence**: Setiap test harus independent
-8. **Clean Test Data**: Cleanup test data setelah execution
+4. **Error Handling**: Implement proper exception handling
+5. **Screenshots**: Capture screenshots untuk debugging
+6. **Test Independence**: Setiap test harus independent
+7. **Clean Test Data**: Cleanup test data setelah execution
 
 ## Troubleshooting
 
@@ -430,73 +362,16 @@ Test framework mendukung:
 4. **App Installation Issues**
    ```bash
    # Verify APK
-   aapt dump badging ElektroniCareBeta1-Updated.apk
+   aapt dump badging app-debug.apk
    
    # Manual install
-   adb install ElektroniCareBeta1-Updated.apk
+   adb install app-debug.apk
    
    # Check app permissions
    adb shell pm list permissions com.example.elektronicarebeta1
    ```
 
-5. **Firebase Connection Issues**
-   - Check internet connection
-   - Verify Firebase configuration
-   - Check API keys dan permissions
-   - Monitor Firebase console untuk errors
-
-### Debug Mode
-
-Enable debug mode untuk detailed logging:
-```java
-// Di AppiumConfig.java
-capabilities.setCapability("appium:enablePerformanceLogging", true);
-capabilities.setCapability("appium:printPageSourceOnFindFailure", true);
-```
-
-## Performance Testing
-
-Framework mendukung basic performance testing:
-- App launch time measurement
-- Page load time tracking
-- Memory usage monitoring
-- Network request tracking
-
-## Continuous Integration
-
-Project siap untuk CI/CD integration:
-- Maven-based build system
-- TestNG XML configuration
-- Parallel execution support
-- Report generation automation
-
-### Jenkins Integration
-```groovy
-pipeline {
-    agent any
-    stages {
-        stage('Test') {
-            steps {
-                sh 'mvn clean test'
-            }
-        }
-        stage('Report') {
-            steps {
-                publishHTML([
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'reports',
-                    reportFiles: 'ExtentReport.html',
-                    reportName: 'Appium Test Report'
-                ])
-            }
-        }
-    }
-}
-```
-
-## Contributing
+## Kontribusi
 
 1. Fork repository
 2. Create feature branch: `git checkout -b feature/new-test`
@@ -510,51 +385,11 @@ pipeline {
 - Include test descriptions dan priorities
 - Update documentation untuk new features
 
-## Contact
+## Kontak
 
-Untuk pertanyaan atau issues, silakan hubungi:
-- Email: agus.septiawan@example.com
-- GitHub: https://github.com/agus-septiawan
-- Project Issues: https://github.com/agus-septiawan/ElektroniCareBeta1/issues
+**Muhammad Mahathir (2208107010056)**
+- GitHub: https://github.com/Mahathirrr/Appium-KotlinApp
 
-## Changelog
+## Lisensi
 
-### Version 2.0 (Current)
-- ✅ Added Onboarding flow testing
-- ✅ Added Welcome screen testing  
-- ✅ Added Registration flow testing dengan validasi lengkap
-- ✅ Added Services page testing dengan Firebase integration
-- ✅ Enhanced Booking flow dengan image upload
-- ✅ Updated documentation dengan setup lengkap
-- ✅ Added Cucumber BDD support
-- ✅ Enhanced reporting dengan screenshots
-- ✅ Added performance monitoring
-
-### Version 1.0
-- Basic login testing
-- Dashboard navigation testing
-- Simple booking flow testing
-- History page testing
-
-## 🚀 Final Project Status
-
-✅ **COMPLETED**: Complete test framework with all compilation issues resolved
-- ✅ All 27 Java files compile successfully (FIXED: All constructor and method issues resolved)
-- ✅ Both TestNG and Cucumber test execution options available
-- ✅ Comprehensive documentation with setup instructions
-- ✅ Built APK files from latest Kotlin source code
-- ✅ Final deliverable package created and verified
-- ✅ **FINAL BUILD SUCCESS**: Maven compilation successful for both main and test sources
-
-### Framework Statistics
-- **Java Files**: 27 (14 main + 13 test)
-- **Feature Files**: 3 (onboarding.feature, welcome.feature, register.feature)
-- **APK Files**: 2 (original + updated)
-- **Test Scenarios**: 23 BDD scenarios + 50+ TestNG test methods
-- **Coverage**: All activities except ProfileActivity (as requested)
-
-### Final Deliverable
-📦 **ElektroniCare-Appium-TestFramework-Final.tar.gz** (30MB)
-- Complete working test framework
-- No compilation errors
-- Ready for execution with proper Appium setup
+Proyek ini dibuat untuk keperluan pembelajaran dan pengembangan automation testing pada aplikasi mobile.
