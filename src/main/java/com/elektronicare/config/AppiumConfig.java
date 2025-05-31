@@ -29,8 +29,8 @@ public class AppiumConfig {
     public static final String APPIUM_SERVER_URL = "http://127.0.0.1:4723";
 
     // Timeout constants
-    public static final Duration IMPLICIT_WAIT = Duration.ofSeconds(5);
-    public static final Duration EXPLICIT_WAIT = Duration.ofSeconds(7);
+    public static final Duration IMPLICIT_WAIT = Duration.ofSeconds(3);
+    public static final Duration EXPLICIT_WAIT = Duration.ofSeconds(5);
 
     /**
      * Start Appium server programmatically
