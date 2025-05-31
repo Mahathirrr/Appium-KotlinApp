@@ -4,6 +4,9 @@ import com.elektronicare.utils.TestUtils;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 
 /**
  * Page Object for Login Screen
@@ -32,386 +35,173 @@ public class LoginPage extends BasePage {
     @AndroidFindBy(id = "com.example.elektronicarebeta1:id/toggle_password_visibility")
     private WebElement passwordToggle;
 
-    // Error message elements
     @AndroidFindBy(xpath = "//android.widget.Toast")
     private WebElement toastMessage;
 
     private static final int DEFAULT_TIMEOUT = 10000; // 10 seconds
-    private static final int DEFAULT_RETRY_COUNT = 5;
 
-    /**
-     * Constructor with proper initialization
-     */
     public LoginPage() {
         super();
-        // Ensure elements are initialized when page object is created
-        safeInitializeElements();
+        initializeElements();
     }
 
-    /**
-     * Safe initialization of elements with retry mechanism
-     */
-    private void safeInitializeElements() {
-        int retryCount = 0;
-        while (retryCount < DEFAULT_RETRY_COUNT) {
-            try {
-                initializeElements();
-                return; // Success, exit the loop
-            } catch (Exception e) {
-                retryCount++;
-                if (retryCount >= DEFAULT_RETRY_COUNT) {
-                    throw new RuntimeException(
-                            "Failed to initialize elements after " + DEFAULT_RETRY_COUNT + " attempts", e);
-                }
-                try {
-                    Thread.sleep(1500); // Wait before retry
-                } catch (InterruptedException ie) {
-                    Thread.currentThread().interrupt();
-                    throw new RuntimeException("Thread interrupted during element initialization", ie);
-                }
-            }
-        }
-    }
-
-    /**
-     * Check if login page is loaded with improved error handling
-     */
-    @Override
-    public boolean isPageLoaded() {
-        try {
-            safeInitializeElements();
-
-            // Check multiple key elements to ensure page is properly loaded
-            boolean emailDisplayed = TestUtils.isElementDisplayed(emailField);
-            boolean passwordDisplayed = TestUtils.isElementDisplayed(passwordField);
-            boolean loginButtonDisplayed = TestUtils.isElementDisplayed(loginButton);
-
-            return emailDisplayed && passwordDisplayed && loginButtonDisplayed;
-
-        } catch (Exception e) {
-            // Log the exception but don't throw it to avoid breaking test flow
-            System.err.println("Error checking if login page is loaded: " + e.getMessage());
-            return false;
-        }
-    }
-
-    /**
-     * Check if login page is displayed with timeout
-     */
-    public boolean isLoginPageDisplayed() {
-        return isLoginPageDisplayed(DEFAULT_TIMEOUT);
-    }
-
-    /**
-     * Check if login page is displayed with custom timeout
-     */
-    public boolean isLoginPageDisplayed(int timeoutMs) {
-        long startTime = System.currentTimeMillis();
-        while ((System.currentTimeMillis() - startTime) < timeoutMs) {
-            if (isPageLoaded()) {
-                return true;
-            }
-            try {
-                Thread.sleep(500); // Check every 500ms
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                return false;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * Get page title
-     */
     @Override
     public String getPageTitle() {
         return "Login";
     }
 
-    /**
-     * Enter email address with validation
-     */
+    @Override
+    public boolean isPageLoaded() {
+        try {
+            initializeElements();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            return wait.until(driver -> {
+                try {
+                    return emailField.isDisplayed() &&
+                            passwordField.isDisplayed() &&
+                            loginButton.isDisplayed();
+                } catch (Exception e) {
+                    return false;
+                }
+            });
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean isLoginPageDisplayed() {
+        return isLoginPageDisplayed(DEFAULT_TIMEOUT);
+    }
+
+    public boolean isLoginPageDisplayed(int timeoutMs) {
+        try {
+            initializeElements();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(timeoutMs));
+
+            // Wait for all critical elements
+            wait.until(ExpectedConditions.visibilityOf(emailField));
+            wait.until(ExpectedConditions.visibilityOf(passwordField));
+            wait.until(ExpectedConditions.visibilityOf(loginButton));
+
+            return true;
+        } catch (Exception e) {
+            System.out.println("Login page not displayed: " + e.getMessage());
+            return false;
+        }
+    }
+
     public void enterEmail(String email) {
-        if (email == null || email.trim().isEmpty()) {
-            throw new IllegalArgumentException("Email cannot be null or empty");
-        }
-
         try {
-            safeInitializeElements();
-            if (!TestUtils.isElementDisplayed(emailField)) {
-                throw new RuntimeException("Email field is not displayed");
-            }
-            TestUtils.safeSendKeys(emailField, email);
+            initializeElements();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.visibilityOf(emailField));
+            emailField.clear();
+            emailField.sendKeys(email);
         } catch (Exception e) {
-            throw new RuntimeException("Failed to enter email: " + email, e);
+            throw new RuntimeException("Failed to enter email: " + e.getMessage());
         }
     }
 
-    /**
-     * Enter password with validation
-     */
     public void enterPassword(String password) {
-        if (password == null) {
-            throw new IllegalArgumentException("Password cannot be null");
-        }
-
         try {
-            safeInitializeElements();
-            if (!TestUtils.isElementDisplayed(passwordField)) {
-                throw new RuntimeException("Password field is not displayed");
-            }
-            TestUtils.safeSendKeys(passwordField, password);
+            initializeElements();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.visibilityOf(passwordField));
+            passwordField.clear();
+            passwordField.sendKeys(password);
         } catch (Exception e) {
-            throw new RuntimeException("Failed to enter password", e);
+            throw new RuntimeException("Failed to enter password: " + e.getMessage());
         }
     }
 
-    /**
-     * Click login button with validation
-     */
     public void clickLoginButton() {
         try {
-            safeInitializeElements();
-            if (!TestUtils.isElementDisplayed(loginButton)) {
-                throw new RuntimeException("Login button is not displayed");
-            }
-            if (!loginButton.isEnabled()) {
-                throw new RuntimeException("Login button is not enabled");
-            }
-            TestUtils.safeClick(loginButton);
+            initializeElements();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+            loginButton.click();
         } catch (Exception e) {
-            throw new RuntimeException("Failed to click login button", e);
+            throw new RuntimeException("Failed to click login button: " + e.getMessage());
         }
     }
 
-    /**
-     * Click Google Sign In button with validation
-     */
-    public void clickGoogleSignIn() {
-        try {
-            safeInitializeElements();
-            if (!isGoogleSignInDisplayed()) {
-                throw new RuntimeException("Google Sign In button is not displayed");
-            }
-            TestUtils.safeClick(googleSignInButton);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to click Google Sign In button", e);
-        }
-    }
-
-    /**
-     * Click register link with validation
-     */
-    public void clickRegisterLink() {
-        try {
-            safeInitializeElements();
-            if (!isRegisterLinkDisplayed()) {
-                throw new RuntimeException("Register link is not displayed");
-            }
-            TestUtils.safeClick(registerLink);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to click register link", e);
-        }
-    }
-
-    /**
-     * Click back button with validation
-     */
-    public void clickBackButton() {
-        try {
-            safeInitializeElements();
-            if (!isBackButtonDisplayed()) {
-                throw new RuntimeException("Back button is not displayed");
-            }
-            TestUtils.safeClick(backButton);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to click back button", e);
-        }
-    }
-
-    /**
-     * Click password visibility toggle with validation
-     */
-    public void clickPasswordToggle() {
-        try {
-            safeInitializeElements();
-            if (!isPasswordToggleDisplayed()) {
-                throw new RuntimeException("Password toggle is not displayed");
-            }
-            TestUtils.safeClick(passwordToggle);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to click password toggle", e);
-        }
-    }
-
-    /**
-     * Perform login with email and password - improved version
-     */
     public void login(String email, String password) {
-        if (!isPageLoaded()) {
-            throw new RuntimeException("Login page is not loaded - cannot perform login");
-        }
-
         try {
             enterEmail(email);
             enterPassword(password);
             hideKeyboard();
             clickLoginButton();
-
-            // Re-initialize elements after login attempt
-            safeInitializeElements();
         } catch (Exception e) {
-            throw new RuntimeException("Login failed for email: " + email, e);
+            throw new RuntimeException("Login failed: " + e.getMessage());
         }
     }
 
-    /**
-     * Check if back button is displayed
-     */
-    public boolean isBackButtonDisplayed() {
+    public void clickGoogleSignIn() {
         try {
-            safeInitializeElements();
-            return TestUtils.isElementDisplayed(backButton);
+            initializeElements();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.elementToBeClickable(googleSignInButton));
+            googleSignInButton.click();
         } catch (Exception e) {
-            return false;
+            throw new RuntimeException("Failed to click Google Sign In: " + e.getMessage());
         }
     }
 
-    /**
-     * Check if password toggle is displayed
-     */
-    public boolean isPasswordToggleDisplayed() {
+    public void clickRegisterLink() {
         try {
-            safeInitializeElements();
-            return TestUtils.isElementDisplayed(passwordToggle);
+            initializeElements();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.elementToBeClickable(registerLink));
+            registerLink.click();
         } catch (Exception e) {
-            return false;
+            throw new RuntimeException("Failed to click register link: " + e.getMessage());
         }
     }
 
-    /**
-     * Check if email field is displayed
-     */
-    public boolean isEmailFieldDisplayed() {
-        try {
-            safeInitializeElements();
-            return TestUtils.isElementDisplayed(emailField);
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    /**
-     * Check if password field is displayed
-     */
-    public boolean isPasswordFieldDisplayed() {
-        try {
-            safeInitializeElements();
-            return TestUtils.isElementDisplayed(passwordField);
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    /**
-     * Check if login button is enabled
-     */
-    public boolean isLoginButtonEnabled() {
-        try {
-            safeInitializeElements();
-            return TestUtils.isElementDisplayed(loginButton) && loginButton.isEnabled();
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    /**
-     * Check if Google Sign In button is displayed
-     */
-    public boolean isGoogleSignInDisplayed() {
-        try {
-            safeInitializeElements();
-            return TestUtils.isElementDisplayed(googleSignInButton);
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    /**
-     * Check if register link is displayed
-     */
-    public boolean isRegisterLinkDisplayed() {
-        try {
-            safeInitializeElements();
-            return TestUtils.isElementDisplayed(registerLink);
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
-    /**
-     * Get toast message text with improved error handling
-     */
     public String getToastMessage() {
         try {
-            safeInitializeElements();
-            if (TestUtils.isElementDisplayed(toastMessage)) {
-                String message = TestUtils.getElementText(toastMessage);
-                return message != null ? message : "";
-            }
+            initializeElements();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.visibilityOf(toastMessage));
+            return toastMessage.getText();
         } catch (Exception e) {
-            // Toast might not be visible or accessible
-            System.err.println("Error getting toast message: " + e.getMessage());
+            return "";
         }
-        return "";
     }
 
-    /**
-     * Wait for login to complete with improved logic
-     */
     public void waitForLoginToComplete() {
-        waitForLoginToComplete(DEFAULT_TIMEOUT);
-    }
-
-    /**
-     * Wait for login to complete with custom timeout
-     */
-    public void waitForLoginToComplete(int timeoutMs) {
         try {
-            safeInitializeElements();
-
-            // Wait for page transition with proper timeout handling
-            int waitInterval = 500; // Check every 500ms
-            int totalWaitTime = 0;
-
-            while (isPageLoaded() && totalWaitTime < timeoutMs) {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(driver -> {
                 try {
-                    Thread.sleep(waitInterval);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    throw new RuntimeException("Thread interrupted while waiting for login to complete", e);
+                    // Check for either success (page change) or error message
+                    boolean onLoginPage = isLoginPageDisplayed(1000);
+                    String toast = getToastMessage();
+                    return !onLoginPage || !toast.isEmpty();
+                } catch (Exception e) {
+                    return false;
                 }
-                totalWaitTime += waitInterval;
-            }
-
-            if (totalWaitTime >= timeoutMs && isPageLoaded()) {
-                throw new TimeoutException("Login did not complete within " + timeoutMs + "ms");
-            }
-
+            });
         } catch (Exception e) {
-            throw new RuntimeException("Error waiting for login to complete", e);
+            System.out.println("Timeout waiting for login completion");
         }
     }
 
-    /**
-     * Validate that all essential elements are present and functional
-     */
-    public boolean validateLoginPageElements() {
+    public boolean isGoogleSignInDisplayed() {
         try {
-            return isEmailFieldDisplayed() &&
-                    isPasswordFieldDisplayed() &&
-                    isLoginButtonEnabled();
+            initializeElements();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            return wait.until(ExpectedConditions.visibilityOf(googleSignInButton)).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean isRegisterLinkDisplayed() {
+        try {
+            initializeElements();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            return wait.until(ExpectedConditions.visibilityOf(registerLink)).isDisplayed();
         } catch (Exception e) {
             return false;
         }
