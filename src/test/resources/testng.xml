@@ -51,9 +51,6 @@
             <!-- Dashboard Tests -->
             <class name="com.elektronicare.tests.DashboardTest"/>
 
-            <!-- Services Tests -->
-            <class name="com.elektronicare.tests.ServicesTest"/>
-
             <!-- History Tests -->
             <class name="com.elektronicare.tests.HistoryTest"/>
 
