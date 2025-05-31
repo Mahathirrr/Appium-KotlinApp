@@ -1,0 +1,13 @@
+com/elektronicare/pages/HistoryPage.class
+com/elektronicare/utils/DriverManager.class
+com/elektronicare/pages/ServicesPage.class
+com/elektronicare/config/AppiumConfig.class
+com/elektronicare/pages/ProfilePage.class
+com/elektronicare/utils/ExtentReportManager.class
+com/elektronicare/pages/WelcomePage.class
+com/elektronicare/pages/RegisterPage.class
+com/elektronicare/pages/OnboardingPage.class
+com/elektronicare/pages/LoginPage.class
+com/elektronicare/utils/TestUtils.class
+com/elektronicare/pages/BasePage.class
+com/elektronicare/pages/DashboardPage.class

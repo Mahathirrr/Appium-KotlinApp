@@ -1,0 +1,13 @@
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/config/AppiumConfig.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/pages/BasePage.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/pages/DashboardPage.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/pages/HistoryPage.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/pages/LoginPage.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/pages/OnboardingPage.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/pages/ProfilePage.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/pages/RegisterPage.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/pages/ServicesPage.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/pages/WelcomePage.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/utils/DriverManager.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/utils/ExtentReportManager.java
+/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/java/com/elektronicare/utils/TestUtils.java

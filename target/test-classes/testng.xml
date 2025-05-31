@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="ElektroniCare Mobile App Test Suite" verbose="1">
+
+    <parameter name="platform" value="Android"/>
+    <parameter name="deviceName" value="Android Emulator"/>
+    <parameter name="appPackage" value="com.example.elektronicarebeta1"/>
+
+    <!-- Test groups for different test categories -->
+    <test name="Smoke Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.elektronicare.tests.OnboardingTest">
+                <methods>
+                    <include name="testOnboardingPageElements"/>
+                </methods>
+            </class>
+            <class name="com.elektronicare.tests.LoginTest">
+                <methods>
+                    <include name="testLoginPageElements"/>
+                </methods>
+            </class>
+            <class name="com.elektronicare.tests.DashboardTest">
+                <methods>
+                    <include name="testDashboardElements"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Full regression test suite -->
+    <test name="Full Regression Tests" preserve-order="true">
+        <classes>
+            <!-- Onboarding Tests -->
+            <class name="com.elektronicare.tests.OnboardingTest"/>
+
+            <!-- Welcome Tests -->
+            <class name="com.elektronicare.tests.WelcomeTest"/>
+
+            <!-- Register Tests -->
+            <class name="com.elektronicare.tests.RegisterTest"/>
+
+            <!-- Login Tests -->
+            <class name="com.elektronicare.tests.LoginTest"/>
+
+            <!-- Dashboard Tests -->
+            <class name="com.elektronicare.tests.DashboardTest"/>
+
+            <!-- Services Tests -->
+            <class name="com.elektronicare.tests.ServicesTest"/>
+
+            <!-- History Tests -->
+            <class name="com.elektronicare.tests.HistoryTest"/>
+
+        </classes>
+    </test>
+
+    <!-- UI Tests only -->
+    <test name="UI Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="ui"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.elektronicare.tests.OnboardingTest"/>
+            <class name="com.elektronicare.tests.LoginTest"/>
+            <class name="com.elektronicare.tests.DashboardTest"/>
+            <class name="com.elektronicare.tests.HistoryTest"/>
+        </classes>
+    </test>
+
+    <!-- Functional Tests only -->
+    <test name="Functional Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="functional"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.elektronicare.tests.LoginTest">
+                <methods>
+                    <include name="testValidLogin"/>
+                    <include name="testInvalidLogin"/>
+                    <include name="testEmptyFieldsLogin"/>
+                </methods>
+            </class>
+            <class name="com.elektronicare.tests.HistoryTest">
+                <methods>
+                    <include name="testNavigationFunctionality"/>
+                    <include name="testHistoryItemInteraction"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <!-- Navigation Tests -->
+    <test name="Navigation Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="navigation"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.elektronicare.tests.DashboardTest">
+                <methods>
+                    <include name="testServiceCardNavigation"/>
+                    <include name="testNavigationButtons"/>
+                    <include name="testBottomNavigation"/>
+                </methods>
+            </class>
+            <class name="com.elektronicare.tests.HistoryTest">
+                <methods>
+                    <include name="testBackButton"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,15 @@
+{
+  "platformName": "Android",
+  "deviceName": "1bd8ccbe",
+  "udid": "1bd8ccbe",
+  "automationName": "UiAutomator2",
+  "app": "/home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v5/app-debug.apk",
+  "appPackage": "com.example.elektronicarebeta1",
+  "appActivity": "com.example.elektronicarebeta1.SplashActivity",
+  "noReset": false,
+  "fullReset": false,
+  "autoGrantPermissions": true,
+  "newCommandTimeout": 300,
+  "disableHiddenApiPolicy": false,
+  "ignoreHiddenApiPolicyError": true
+}

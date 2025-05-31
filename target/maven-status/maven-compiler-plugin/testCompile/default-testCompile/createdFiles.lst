@@ -1,0 +1,12 @@
+com/elektronicare/tests/ServicesTest.class
+com/elektronicare/tests/DashboardTest.class
+com/elektronicare/tests/ProfileTest.class
+com/elektronicare/tests/RegisterTest.class
+com/elektronicare/tests/HistoryTest.class
+com/elektronicare/tests/OnboardingTest.class
+com/elektronicare/tests/WelcomeTest.class
+com/elektronicare/stepdefinitions/RegisterSteps.class
+com/elektronicare/stepdefinitions/OnboardingSteps.class
+com/elektronicare/tests/BaseTest.class
+com/elektronicare/stepdefinitions/WelcomeSteps.class
+com/elektronicare/tests/LoginTest.class
