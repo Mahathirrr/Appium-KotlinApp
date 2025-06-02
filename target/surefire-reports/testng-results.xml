@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="34" passed="28" failed="3" skipped="3">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-06-02T13:02:24 WIB" name="ElektroniCare Mobile App Test Suite" finished-at="2025-06-02T13:17:43 WIB" duration-ms="918384">
+    <groups>
+      <group name="navigation">
+        <method signature="WelcomeTest.testNavigateToRegister()[pri:3, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" name="testNavigateToRegister" class="com.elektronicare.tests.WelcomeTest"/>
+        <method signature="WelcomeTest.testNavigateToLogin()[pri:4, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" name="testNavigateToLogin" class="com.elektronicare.tests.WelcomeTest"/>
+        <method signature="RegisterTest.testNavigateToLogin()[pri:8, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testNavigateToLogin" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="RegisterTest.testBackNavigation()[pri:9, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testBackNavigation" class="com.elektronicare.tests.RegisterTest"/>
+      </group> <!-- navigation -->
+      <group name="functional">
+        <method signature="OnboardingTest.testOnboardingNavigation()[pri:2, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" name="testOnboardingNavigation" class="com.elektronicare.tests.OnboardingTest"/>
+        <method signature="RegisterTest.testRegisterValidation()[pri:2, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testRegisterValidation" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="OnboardingTest.testOnboardingSkip()[pri:3, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" name="testOnboardingSkip" class="com.elektronicare.tests.OnboardingTest"/>
+        <method signature="RegisterTest.testInvalidEmailValidation()[pri:3, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testInvalidEmailValidation" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="WelcomeTest.testNavigateToRegister()[pri:3, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" name="testNavigateToRegister" class="com.elektronicare.tests.WelcomeTest"/>
+        <method signature="OnboardingTest.testOnboardingComplete()[pri:4, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" name="testOnboardingComplete" class="com.elektronicare.tests.OnboardingTest"/>
+        <method signature="RegisterTest.testInvalidPhoneValidation()[pri:4, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testInvalidPhoneValidation" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="WelcomeTest.testNavigateToLogin()[pri:4, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" name="testNavigateToLogin" class="com.elektronicare.tests.WelcomeTest"/>
+        <method signature="RegisterTest.testShortPasswordValidation()[pri:5, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testShortPasswordValidation" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="RegisterTest.testPasswordVisibilityToggle()[pri:6, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testPasswordVisibilityToggle" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="RegisterTest.testValidRegistration()[pri:7, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testValidRegistration" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="RegisterTest.testNavigateToLogin()[pri:8, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testNavigateToLogin" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="RegisterTest.testBackNavigation()[pri:9, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testBackNavigation" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="RegisterTest.testGoogleSignInButton()[pri:10, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testGoogleSignInButton" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="RegisterTest.testPhoneNumberFormatting()[pri:11, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testPhoneNumberFormatting" class="com.elektronicare.tests.RegisterTest"/>
+      </group> <!-- functional -->
+      <group name="ui">
+        <method signature="RegisterTest.testRegisterPageDisplay()[pri:1, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testRegisterPageDisplay" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="WelcomeTest.testWelcomePageDisplay()[pri:1, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" name="testWelcomePageDisplay" class="com.elektronicare.tests.WelcomeTest"/>
+        <method signature="WelcomeTest.testWelcomePageElements()[pri:2, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" name="testWelcomePageElements" class="com.elektronicare.tests.WelcomeTest"/>
+        <method signature="WelcomeTest.testWelcomePageBranding()[pri:5, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" name="testWelcomePageBranding" class="com.elektronicare.tests.WelcomeTest"/>
+      </group> <!-- ui -->
+      <group name="smoke">
+        <method signature="RegisterTest.testRegisterPageDisplay()[pri:1, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" name="testRegisterPageDisplay" class="com.elektronicare.tests.RegisterTest"/>
+        <method signature="WelcomeTest.testWelcomePageDisplay()[pri:1, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" name="testWelcomePageDisplay" class="com.elektronicare.tests.WelcomeTest"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test started-at="2025-06-02T13:02:24 WIB" name="Smoke Tests" finished-at="2025-06-02T13:02:24 WIB" duration-ms="7">
+    </test> <!-- Smoke Tests -->
+    <test started-at="2025-06-02T13:02:24 WIB" name="Full Regression Tests" finished-at="2025-06-02T13:17:39 WIB" duration-ms="914326">
+      <class name="com.elektronicare.tests.LoginTest">
+        <test-method is-config="true" signature="initializeTestClass()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:08:56 WIB" name="initializeTestClass" finished-at="2025-06-02T13:09:03 WIB" duration-ms="7201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeTestClass -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:09:03 WIB" name="beforeMethod" finished-at="2025-06-02T13:09:13 WIB" duration-ms="9646" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="setupLoginTest()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:09:13 WIB" name="setupLoginTest" finished-at="2025-06-02T13:09:23 WIB" duration-ms="10570" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupLoginTest -->
+        <test-method signature="testValidLogin()[pri:1, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:09:23 WIB" name="testValidLogin" description="Test login with valid credentials" finished-at="2025-06-02T13:10:21 WIB" duration-ms="58353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidLogin -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:10:21 WIB" name="afterMethod" finished-at="2025-06-02T13:10:22 WIB" duration-ms="477" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testValidLogin status=SUCCESS method=LoginTest.testValidLogin()[pri:1, instance:com.elektronicare.tests.LoginTest@f6efaab] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:10:22 WIB" name="beforeMethod" finished-at="2025-06-02T13:10:31 WIB" duration-ms="9364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="setupLoginTest()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:10:31 WIB" name="setupLoginTest" finished-at="2025-06-02T13:10:42 WIB" duration-ms="10595" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupLoginTest -->
+        <test-method signature="testInvalidLogin()[pri:2, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:10:42 WIB" name="testInvalidLogin" description="Test login with invalid credentials" finished-at="2025-06-02T13:10:55 WIB" duration-ms="13431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidLogin -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:10:55 WIB" name="afterMethod" finished-at="2025-06-02T13:10:56 WIB" duration-ms="456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testInvalidLogin status=SUCCESS method=LoginTest.testInvalidLogin()[pri:2, instance:com.elektronicare.tests.LoginTest@f6efaab] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:10:56 WIB" name="beforeMethod" finished-at="2025-06-02T13:11:05 WIB" duration-ms="9263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="setupLoginTest()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:11:05 WIB" name="setupLoginTest" finished-at="2025-06-02T13:14:41 WIB" duration-ms="216180" status="FAIL">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[LoginTest setup failed: Login page not ready for testing]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: LoginTest setup failed: Login page not ready for testing
+at com.elektronicare.tests.LoginTest.setupLoginTest(LoginTest.java:93)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupLoginTest -->
+        <test-method signature="testEmptyFieldsLogin()[pri:3, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:14:41 WIB" name="testEmptyFieldsLogin" description="Test login with empty fields" finished-at="2025-06-02T13:14:41 WIB" duration-ms="0" status="SKIP">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[LoginTest setup failed: Login page not ready for testing]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: LoginTest setup failed: Login page not ready for testing
+at com.elektronicare.tests.LoginTest.setupLoginTest(LoginTest.java:93)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyFieldsLogin -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:14:41 WIB" name="afterMethod" finished-at="2025-06-02T13:14:41 WIB" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="setupLoginTest()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:14:41 WIB" name="setupLoginTest" finished-at="2025-06-02T13:14:41 WIB" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupLoginTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:14:41 WIB" name="beforeMethod" finished-at="2025-06-02T13:14:41 WIB" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testRegisterLink()[pri:5, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:14:41 WIB" name="testRegisterLink" description="Test register link navigation" finished-at="2025-06-02T13:14:41 WIB" duration-ms="0" status="SKIP">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[LoginTest setup failed: Login page not ready for testing]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: LoginTest setup failed: Login page not ready for testing
+at com.elektronicare.tests.LoginTest.setupLoginTest(LoginTest.java:93)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegisterLink -->
+        <test-method signature="testGoogleSignIn()[pri:4, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:14:41 WIB" name="testGoogleSignIn" description="Test Google Sign In button" finished-at="2025-06-02T13:14:41 WIB" duration-ms="0" status="SKIP">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[LoginTest setup failed: Login page not ready for testing]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: LoginTest setup failed: Login page not ready for testing
+at com.elektronicare.tests.LoginTest.setupLoginTest(LoginTest.java:93)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:833)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:600)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGoogleSignIn -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:14:41 WIB" name="afterMethod" finished-at="2025-06-02T13:14:41 WIB" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="setupLoginTest()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:14:41 WIB" name="setupLoginTest" finished-at="2025-06-02T13:14:41 WIB" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupLoginTest -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:14:41 WIB" name="afterMethod" finished-at="2025-06-02T13:14:41 WIB" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.LoginTest@f6efaab]" started-at="2025-06-02T13:14:41 WIB" name="beforeMethod" finished-at="2025-06-02T13:14:41 WIB" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+      </class> <!-- com.elektronicare.tests.LoginTest -->
+      <class name="com.elektronicare.tests.RegisterTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:05:01 WIB" name="beforeMethod" finished-at="2025-06-02T13:05:10 WIB" duration-ms="9190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testRegisterPageDisplay()[pri:1, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:05:10 WIB" name="testRegisterPageDisplay" finished-at="2025-06-02T13:05:22 WIB" duration-ms="12140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegisterPageDisplay -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:05:22 WIB" name="afterMethod" finished-at="2025-06-02T13:05:23 WIB" duration-ms="442" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testRegisterPageDisplay status=SUCCESS method=RegisterTest.testRegisterPageDisplay()[pri:1, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:05:23 WIB" name="beforeMethod" finished-at="2025-06-02T13:05:32 WIB" duration-ms="9497" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testRegisterValidation()[pri:2, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:05:32 WIB" name="testRegisterValidation" finished-at="2025-06-02T13:05:45 WIB" duration-ms="12971" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegisterValidation -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:05:45 WIB" name="afterMethod" finished-at="2025-06-02T13:05:46 WIB" duration-ms="449" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testRegisterValidation status=SUCCESS method=RegisterTest.testRegisterValidation()[pri:2, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:05:46 WIB" name="beforeMethod" finished-at="2025-06-02T13:05:56 WIB" duration-ms="10332" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testInvalidEmailValidation()[pri:3, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:05:56 WIB" name="testInvalidEmailValidation" finished-at="2025-06-02T13:06:14 WIB" duration-ms="17807" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidEmailValidation -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:06:14 WIB" name="afterMethod" finished-at="2025-06-02T13:06:14 WIB" duration-ms="456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testInvalidEmailValidation status=SUCCESS method=RegisterTest.testInvalidEmailValidation()[pri:3, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:06:14 WIB" name="beforeMethod" finished-at="2025-06-02T13:06:23 WIB" duration-ms="9231" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testInvalidPhoneValidation()[pri:4, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:06:23 WIB" name="testInvalidPhoneValidation" finished-at="2025-06-02T13:06:36 WIB" duration-ms="12637" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidPhoneValidation -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:06:36 WIB" name="afterMethod" finished-at="2025-06-02T13:06:37 WIB" duration-ms="456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testInvalidPhoneValidation status=SUCCESS method=RegisterTest.testInvalidPhoneValidation()[pri:4, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:06:37 WIB" name="beforeMethod" finished-at="2025-06-02T13:06:46 WIB" duration-ms="9125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testShortPasswordValidation()[pri:5, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:06:46 WIB" name="testShortPasswordValidation" finished-at="2025-06-02T13:06:59 WIB" duration-ms="13676" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testShortPasswordValidation -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:06:59 WIB" name="afterMethod" finished-at="2025-06-02T13:07:00 WIB" duration-ms="455" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testShortPasswordValidation status=SUCCESS method=RegisterTest.testShortPasswordValidation()[pri:5, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:07:00 WIB" name="beforeMethod" finished-at="2025-06-02T13:07:09 WIB" duration-ms="9180" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testPasswordVisibilityToggle()[pri:6, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:07:09 WIB" name="testPasswordVisibilityToggle" finished-at="2025-06-02T13:07:18 WIB" duration-ms="8597" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPasswordVisibilityToggle -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:07:18 WIB" name="afterMethod" finished-at="2025-06-02T13:07:18 WIB" duration-ms="467" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testPasswordVisibilityToggle status=SUCCESS method=RegisterTest.testPasswordVisibilityToggle()[pri:6, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:07:18 WIB" name="beforeMethod" finished-at="2025-06-02T13:07:27 WIB" duration-ms="9317" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testValidRegistration()[pri:7, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:07:27 WIB" name="testValidRegistration" finished-at="2025-06-02T13:07:47 WIB" duration-ms="19369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidRegistration -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:07:47 WIB" name="afterMethod" finished-at="2025-06-02T13:07:47 WIB" duration-ms="453" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testValidRegistration status=SUCCESS method=RegisterTest.testValidRegistration()[pri:7, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:07:47 WIB" name="beforeMethod" finished-at="2025-06-02T13:07:57 WIB" duration-ms="9434" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testNavigateToLogin()[pri:8, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:07:57 WIB" name="testNavigateToLogin" finished-at="2025-06-02T13:08:07 WIB" duration-ms="9920" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNavigateToLogin -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:08:07 WIB" name="afterMethod" finished-at="2025-06-02T13:08:07 WIB" duration-ms="478" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testNavigateToLogin status=SUCCESS method=RegisterTest.testNavigateToLogin()[pri:8, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:08:07 WIB" name="beforeMethod" finished-at="2025-06-02T13:08:16 WIB" duration-ms="9338" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testBackNavigation()[pri:9, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:08:16 WIB" name="testBackNavigation" finished-at="2025-06-02T13:08:22 WIB" duration-ms="5931" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBackNavigation -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:08:22 WIB" name="afterMethod" finished-at="2025-06-02T13:08:23 WIB" duration-ms="531" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testBackNavigation status=SUCCESS method=RegisterTest.testBackNavigation()[pri:9, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:08:23 WIB" name="beforeMethod" finished-at="2025-06-02T13:08:32 WIB" duration-ms="9377" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testGoogleSignInButton()[pri:10, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:08:32 WIB" name="testGoogleSignInButton" finished-at="2025-06-02T13:08:38 WIB" duration-ms="5954" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGoogleSignInButton -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:08:38 WIB" name="afterMethod" finished-at="2025-06-02T13:08:39 WIB" duration-ms="613" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testGoogleSignInButton status=SUCCESS method=RegisterTest.testGoogleSignInButton()[pri:10, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:08:39 WIB" name="beforeMethod" finished-at="2025-06-02T13:08:48 WIB" duration-ms="9567" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testPhoneNumberFormatting()[pri:11, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:08:48 WIB" name="testPhoneNumberFormatting" finished-at="2025-06-02T13:08:55 WIB" duration-ms="6925" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPhoneNumberFormatting -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.RegisterTest@74f0ea28]" started-at="2025-06-02T13:08:55 WIB" name="afterMethod" finished-at="2025-06-02T13:08:56 WIB" duration-ms="446" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testPhoneNumberFormatting status=SUCCESS method=RegisterTest.testPhoneNumberFormatting()[pri:11, instance:com.elektronicare.tests.RegisterTest@74f0ea28] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.elektronicare.tests.RegisterTest -->
+      <class name="com.elektronicare.tests.OnboardingTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:02:24 WIB" name="beforeMethod" finished-at="2025-06-02T13:02:35 WIB" duration-ms="11263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:02:35 WIB" name="setupPages" finished-at="2025-06-02T13:02:36 WIB" duration-ms="439" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testOnboardingNavigation()[pri:2, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:02:36 WIB" name="testOnboardingNavigation" finished-at="2025-06-02T13:02:46 WIB" duration-ms="9856" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOnboardingNavigation -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:02:46 WIB" name="afterMethod" finished-at="2025-06-02T13:02:46 WIB" duration-ms="485" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testOnboardingNavigation status=SUCCESS method=OnboardingTest.testOnboardingNavigation()[pri:2, instance:com.elektronicare.tests.OnboardingTest@2b662a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:02:46 WIB" name="beforeMethod" finished-at="2025-06-02T13:02:56 WIB" duration-ms="9257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:02:56 WIB" name="setupPages" finished-at="2025-06-02T13:02:56 WIB" duration-ms="79" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testOnboardingSkip()[pri:3, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:02:56 WIB" name="testOnboardingSkip" finished-at="2025-06-02T13:02:57 WIB" duration-ms="1286" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOnboardingSkip -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:02:57 WIB" name="afterMethod" finished-at="2025-06-02T13:02:57 WIB" duration-ms="519" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testOnboardingSkip status=SUCCESS method=OnboardingTest.testOnboardingSkip()[pri:3, instance:com.elektronicare.tests.OnboardingTest@2b662a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:02:57 WIB" name="beforeMethod" finished-at="2025-06-02T13:03:07 WIB" duration-ms="9779" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="setupPages()[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:03:07 WIB" name="setupPages" finished-at="2025-06-02T13:03:07 WIB" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupPages -->
+        <test-method signature="testOnboardingComplete()[pri:4, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:03:07 WIB" name="testOnboardingComplete" finished-at="2025-06-02T13:03:11 WIB" duration-ms="3419" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testOnboardingComplete -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:03:11 WIB" name="afterMethod" finished-at="2025-06-02T13:03:11 WIB" duration-ms="460" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testOnboardingComplete status=SUCCESS method=OnboardingTest.testOnboardingComplete()[pri:4, instance:com.elektronicare.tests.OnboardingTest@2b662a77] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.elektronicare.tests.OnboardingTest -->
+      <class name="com.elektronicare.tests.HistoryTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:15:52 WIB" name="beforeMethod" finished-at="2025-06-02T13:16:01 WIB" duration-ms="9573" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="navigateToHistory()[pri:0, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:16:01 WIB" name="navigateToHistory" finished-at="2025-06-02T13:16:19 WIB" duration-ms="18012" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHistory -->
+        <test-method signature="testHistoryPageElements()[pri:1, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:16:19 WIB" name="testHistoryPageElements" description="Verify history page elements" finished-at="2025-06-02T13:16:27 WIB" duration-ms="7714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHistoryPageElements -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:16:27 WIB" name="afterMethod" finished-at="2025-06-02T13:16:28 WIB" duration-ms="485" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testHistoryPageElements status=SUCCESS method=HistoryTest.testHistoryPageElements()[pri:1, instance:com.elektronicare.tests.HistoryTest@3349e9bb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:16:28 WIB" name="beforeMethod" finished-at="2025-06-02T13:16:37 WIB" duration-ms="9177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="navigateToHistory()[pri:0, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:16:37 WIB" name="navigateToHistory" finished-at="2025-06-02T13:16:54 WIB" duration-ms="17263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHistory -->
+        <test-method signature="testHistoryPageLoading()[pri:2, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:16:54 WIB" name="testHistoryPageLoading" description="Test history page loading" finished-at="2025-06-02T13:17:04 WIB" duration-ms="9525" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHistoryPageLoading -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:17:04 WIB" name="afterMethod" finished-at="2025-06-02T13:17:04 WIB" duration-ms="482" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testHistoryPageLoading status=SUCCESS method=HistoryTest.testHistoryPageLoading()[pri:2, instance:com.elektronicare.tests.HistoryTest@3349e9bb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:17:04 WIB" name="beforeMethod" finished-at="2025-06-02T13:17:13 WIB" duration-ms="9148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="navigateToHistory()[pri:0, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:17:13 WIB" name="navigateToHistory" finished-at="2025-06-02T13:17:31 WIB" duration-ms="18152" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToHistory -->
+        <test-method signature="testHistoryDataValidation()[pri:3, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:17:31 WIB" name="testHistoryDataValidation" description="Test history data validation" finished-at="2025-06-02T13:17:38 WIB" duration-ms="6705" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHistoryDataValidation -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.HistoryTest@3349e9bb]" started-at="2025-06-02T13:17:38 WIB" name="afterMethod" finished-at="2025-06-02T13:17:39 WIB" duration-ms="456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testHistoryDataValidation status=SUCCESS method=HistoryTest.testHistoryDataValidation()[pri:3, instance:com.elektronicare.tests.HistoryTest@3349e9bb] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.elektronicare.tests.HistoryTest -->
+      <class name="com.elektronicare.tests.WelcomeTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:03:11 WIB" name="beforeMethod" finished-at="2025-06-02T13:03:20 WIB" duration-ms="9303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testWelcomePageDisplay()[pri:1, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:03:20 WIB" name="testWelcomePageDisplay" finished-at="2025-06-02T13:03:27 WIB" duration-ms="6818" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWelcomePageDisplay -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:03:27 WIB" name="afterMethod" finished-at="2025-06-02T13:03:28 WIB" duration-ms="457" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testWelcomePageDisplay status=SUCCESS method=WelcomeTest.testWelcomePageDisplay()[pri:1, instance:com.elektronicare.tests.WelcomeTest@1283bb96] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:03:28 WIB" name="beforeMethod" finished-at="2025-06-02T13:03:37 WIB" duration-ms="9327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testWelcomePageElements()[pri:2, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:03:37 WIB" name="testWelcomePageElements" finished-at="2025-06-02T13:03:41 WIB" duration-ms="3700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWelcomePageElements -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:03:41 WIB" name="afterMethod" finished-at="2025-06-02T13:03:41 WIB" duration-ms="475" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testWelcomePageElements status=SUCCESS method=WelcomeTest.testWelcomePageElements()[pri:2, instance:com.elektronicare.tests.WelcomeTest@1283bb96] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:03:41 WIB" name="beforeMethod" finished-at="2025-06-02T13:03:51 WIB" duration-ms="9312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testNavigateToRegister()[pri:3, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:03:51 WIB" name="testNavigateToRegister" finished-at="2025-06-02T13:03:55 WIB" duration-ms="4740" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNavigateToRegister -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:03:55 WIB" name="afterMethod" finished-at="2025-06-02T13:03:56 WIB" duration-ms="468" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testNavigateToRegister status=SUCCESS method=WelcomeTest.testNavigateToRegister()[pri:3, instance:com.elektronicare.tests.WelcomeTest@1283bb96] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:03:56 WIB" name="beforeMethod" finished-at="2025-06-02T13:04:05 WIB" duration-ms="9136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testNavigateToLogin()[pri:4, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:04:05 WIB" name="testNavigateToLogin" finished-at="2025-06-02T13:04:47 WIB" duration-ms="42326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNavigateToLogin -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:04:47 WIB" name="afterMethod" finished-at="2025-06-02T13:04:48 WIB" duration-ms="456" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testNavigateToLogin status=SUCCESS method=WelcomeTest.testNavigateToLogin()[pri:4, instance:com.elektronicare.tests.WelcomeTest@1283bb96] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:04:48 WIB" name="beforeMethod" finished-at="2025-06-02T13:04:57 WIB" duration-ms="9281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testWelcomePageBranding()[pri:5, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:04:57 WIB" name="testWelcomePageBranding" finished-at="2025-06-02T13:05:00 WIB" duration-ms="3534" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWelcomePageBranding -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.WelcomeTest@1283bb96]" started-at="2025-06-02T13:05:00 WIB" name="afterMethod" finished-at="2025-06-02T13:05:01 WIB" duration-ms="445" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testWelcomePageBranding status=SUCCESS method=WelcomeTest.testWelcomePageBranding()[pri:5, instance:com.elektronicare.tests.WelcomeTest@1283bb96] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.elektronicare.tests.WelcomeTest -->
+      <class name="com.elektronicare.tests.DashboardTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.DashboardTest@3c19aaa5]" started-at="2025-06-02T13:14:41 WIB" name="beforeMethod" finished-at="2025-06-02T13:14:51 WIB" duration-ms="9715" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="navigateToDashboard()[pri:0, instance:com.elektronicare.tests.DashboardTest@3c19aaa5]" started-at="2025-06-02T13:14:51 WIB" name="navigateToDashboard" finished-at="2025-06-02T13:15:06 WIB" duration-ms="15533" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToDashboard -->
+        <test-method signature="testNavigationButtons()[pri:1, instance:com.elektronicare.tests.DashboardTest@3c19aaa5]" started-at="2025-06-02T13:15:06 WIB" name="testNavigationButtons" description="Test navigation buttons" finished-at="2025-06-02T13:15:16 WIB" duration-ms="9278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNavigationButtons -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.DashboardTest@3c19aaa5]" started-at="2025-06-02T13:15:16 WIB" name="afterMethod" finished-at="2025-06-02T13:15:16 WIB" duration-ms="465" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testNavigationButtons status=SUCCESS method=DashboardTest.testNavigationButtons()[pri:1, instance:com.elektronicare.tests.DashboardTest@3c19aaa5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.elektronicare.tests.DashboardTest@3c19aaa5]" started-at="2025-06-02T13:15:16 WIB" name="beforeMethod" finished-at="2025-06-02T13:15:25 WIB" duration-ms="9188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="navigateToDashboard()[pri:0, instance:com.elektronicare.tests.DashboardTest@3c19aaa5]" started-at="2025-06-02T13:15:25 WIB" name="navigateToDashboard" finished-at="2025-06-02T13:15:41 WIB" duration-ms="15261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToDashboard -->
+        <test-method signature="testBottomNavigation()[pri:2, instance:com.elektronicare.tests.DashboardTest@3c19aaa5]" started-at="2025-06-02T13:15:41 WIB" name="testBottomNavigation" description="Test bottom navigation" finished-at="2025-06-02T13:15:51 WIB" duration-ms="10615" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBottomNavigation -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.elektronicare.tests.DashboardTest@3c19aaa5]" started-at="2025-06-02T13:15:51 WIB" name="afterMethod" finished-at="2025-06-02T13:15:52 WIB" duration-ms="513" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testBottomNavigation status=SUCCESS method=DashboardTest.testBottomNavigation()[pri:2, instance:com.elektronicare.tests.DashboardTest@3c19aaa5] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.elektronicare.tests.DashboardTest -->
+    </test> <!-- Full Regression Tests -->
+    <test started-at="2025-06-02T13:17:39 WIB" name="UI Tests" finished-at="2025-06-02T13:17:39 WIB" duration-ms="0">
+    </test> <!-- UI Tests -->
+    <test started-at="2025-06-02T13:17:39 WIB" name="Functional Tests" finished-at="2025-06-02T13:17:39 WIB" duration-ms="3">
+      <class name="com.elektronicare.tests.LoginTest">
+        <test-method signature="testValidLogin()[pri:1, instance:com.elektronicare.tests.LoginTest@18078bef]" started-at="2025-06-02T13:17:39 WIB" name="testValidLogin" description="Test login with valid credentials" finished-at="2025-06-02T13:17:39 WIB" duration-ms="0" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Driver should not be null expected object to not be null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Driver should not be null expected object to not be null
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.assertNotNull(Assert.java:1484)
+at com.elektronicare.tests.LoginTest.testValidLogin(LoginTest.java:118)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidLogin -->
+        <test-method signature="testInvalidLogin()[pri:2, instance:com.elektronicare.tests.LoginTest@18078bef]" started-at="2025-06-02T13:17:39 WIB" name="testInvalidLogin" description="Test login with invalid credentials" finished-at="2025-06-02T13:17:39 WIB" duration-ms="0" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Driver should not be null expected object to not be null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Driver should not be null expected object to not be null
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.assertNotNull(Assert.java:1484)
+at com.elektronicare.tests.LoginTest.testInvalidLogin(LoginTest.java:166)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidLogin -->
+        <test-method signature="testEmptyFieldsLogin()[pri:3, instance:com.elektronicare.tests.LoginTest@18078bef]" started-at="2025-06-02T13:17:39 WIB" name="testEmptyFieldsLogin" description="Test login with empty fields" finished-at="2025-06-02T13:17:39 WIB" duration-ms="0" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Driver should not be null expected object to not be null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Driver should not be null expected object to not be null
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.assertNotNull(Assert.java:1484)
+at com.elektronicare.tests.LoginTest.testEmptyFieldsLogin(LoginTest.java:203)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEmptyFieldsLogin -->
+      </class> <!-- com.elektronicare.tests.LoginTest -->
+    </test> <!-- Functional Tests -->
+    <test started-at="2025-06-02T13:17:39 WIB" name="Navigation Tests" finished-at="2025-06-02T13:17:43 WIB" duration-ms="4005">
+      <class name="com.elektronicare.tests.OnboardingTest">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:02:20 WIB" name="beforeSuite" finished-at="2025-06-02T13:02:24 WIB" duration-ms="3894" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.elektronicare.tests.OnboardingTest@2b662a77]" started-at="2025-06-02T13:17:43 WIB" name="afterSuite" finished-at="2025-06-02T13:17:43 WIB" duration-ms="213" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.elektronicare.tests.OnboardingTest -->
+      <class name="com.elektronicare.tests.DashboardTest">
+        <test-method signature="testNavigationButtons()[pri:1, instance:com.elektronicare.tests.DashboardTest@3023df74]" started-at="2025-06-02T13:17:39 WIB" name="testNavigationButtons" description="Test navigation buttons" finished-at="2025-06-02T13:17:41 WIB" duration-ms="2003" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNavigationButtons -->
+        <test-method signature="testBottomNavigation()[pri:2, instance:com.elektronicare.tests.DashboardTest@3023df74]" started-at="2025-06-02T13:17:41 WIB" name="testBottomNavigation" description="Test bottom navigation" finished-at="2025-06-02T13:17:43 WIB" duration-ms="2000" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testBottomNavigation -->
+      </class> <!-- com.elektronicare.tests.DashboardTest -->
+    </test> <!-- Navigation Tests -->
+  </suite> <!-- ElektroniCare Mobile App Test Suite -->
+</testng-results>

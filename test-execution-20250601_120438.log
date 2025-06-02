@@ -1,0 +1,49 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< com.elektronicare:appium-automation >-----------------
+[INFO] Building ElektroniCare Appium Automation 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ appium-automation ---
+[INFO] skip non existing resourceDirectory /home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ appium-automation ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ appium-automation ---
+[INFO] Copying 7 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ appium-automation ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.0:test (default-test) @ appium-automation ---
+[INFO] Using auto detected provider org.apache.maven.surefire.testng.TestNGProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running TestSuite
+=== Starting ElektroniCare Test Suite ===
+ExtentReports initialized: /home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/test-reports/ElektroniCare_Test_Report_2025-06-01_12-04-41.html
+Appium Server started successfully
+[Appium] Welcome to Appium v2.17.1
+[Appium] Non-default server args:
+[Appium] { address: '127.0.0.1',
+  allowInsecure: [ 'chromedriver_autodownload' ],
+  sessionOverride: true }
+[Appium] The autodetected Appium home path: /home/neonnex/.appium
+[Appium] Attempting to load driver uiautomator2...
+[Appium] Requiring driver at /home/neonnex/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+[Appium] AndroidUiautomator2Driver has been successfully loaded in 0.347s
+[HTTP] Could not start REST http interface listener. The requested port may already be in use. Please make sure there is no other instance of this server running already.
+[Appium] Could not configure Appium server. It's possible that a driver or plugin tried to update the server and failed. Original error: listen EADDRINUSE: address already in use 127.0.0.1:4723
+[Appium] Error: listen EADDRINUSE: address already in use 127.0.0.1:4723
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at node:net:2203:7
+    at processTicksAndRejections (node:internal/process/task_queues:90:21)
+Test suite setup completed
+Setting up test method...
+APK found and set: /home/neonnex/dev/kuliah/sem6/mk/kpl/Appium-ProjectAkhir/Appium-v9/app-debug.apk
+Attempting to initialize driver (attempt 1/3)

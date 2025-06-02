@@ -36,16 +36,27 @@ public class AppiumConfig {
      * Start Appium server programmatically
      */
     public static void startAppiumServer() {
-        if (service == null || !service.isRunning()) {
-            AppiumServiceBuilder builder = new AppiumServiceBuilder();
-            builder.withIPAddress("127.0.0.1");
-            builder.usingPort(4723);
-            builder.withArgument(() -> "--allow-insecure", "chromedriver_autodownload");
+        try {
+            if (service == null || !service.isRunning()) {
+                AppiumServiceBuilder builder = new AppiumServiceBuilder();
+                builder.withIPAddress("127.0.0.1");
+                builder.usingPort(4723);
+                builder.withArgument(() -> "--allow-insecure", "chromedriver_autodownload");
+                builder.withArgument(() -> "--session-override");
 
-            service = AppiumDriverLocalService.buildService(builder);
-            service.start();
+                service = AppiumDriverLocalService.buildService(builder);
+                service.start();
 
-            System.out.println("Appium Server started successfully");
+                System.out.println("Appium Server started successfully");
+
+                // Wait a bit for server to be fully ready
+                Thread.sleep(2000);
+            } else {
+                System.out.println("Appium Server already running");
+            }
+        } catch (Exception e) {
+            System.err.println("Failed to start Appium server: " + e.getMessage());
+            throw new RuntimeException("Cannot start Appium server", e);
         }
     }
 
@@ -53,9 +64,15 @@ public class AppiumConfig {
      * Stop Appium server
      */
     public static void stopAppiumServer() {
-        if (service != null && service.isRunning()) {
-            service.stop();
-            System.out.println("Appium Server stopped successfully");
+        try {
+            if (service != null && service.isRunning()) {
+                service.stop();
+                System.out.println("Appium Server stopped successfully");
+            }
+        } catch (Exception e) {
+            System.err.println("Error stopping Appium server: " + e.getMessage());
+        } finally {
+            service = null;
         }
     }
 
@@ -64,6 +81,16 @@ public class AppiumConfig {
      */
     public static AndroidDriver initializeDriver() {
         try {
+            // Quit existing driver if any
+            if (driver != null) {
+                try {
+                    driver.quit();
+                } catch (Exception e) {
+                    System.err.println("Warning: Error quitting existing driver: " + e.getMessage());
+                }
+                driver = null;
+            }
+
             UiAutomator2Options options = new UiAutomator2Options();
 
             // Basic capabilities
@@ -85,52 +112,156 @@ public class AppiumConfig {
                 System.out.println("Will try to launch app if already installed");
             }
 
-            // Additional capabilities
+            // Additional capabilities for stability
             options.setNoReset(false); // Reset app state
             options.setFullReset(false); // Don't uninstall app
             options.setNewCommandTimeout(Duration.ofSeconds(300));
+            options.setUiautomator2ServerInstallTimeout(Duration.ofSeconds(60));
+            options.setUiautomator2ServerLaunchTimeout(Duration.ofSeconds(60));
+            options.setSkipServerInstallation(false);
+            options.setSkipDeviceInitialization(false);
 
-            // Initialize driver
-            driver = new AndroidDriver(new URL(APPIUM_SERVER_URL), options);
+            // Prevent session conflicts
+            options.setAutoGrantPermissions(true);
+            options.setCapability("appium:sessionOverride", true);
 
-            // Set timeouts
-            driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT);
+            // Initialize driver with retry mechanism
+            int maxRetries = 3;
+            Exception lastException = null;
 
-            System.out.println("Android Driver initialized successfully");
-            return driver;
+            for (int i = 0; i < maxRetries; i++) {
+                try {
+                    System.out.println("Attempting to initialize driver (attempt " + (i + 1) + "/" + maxRetries + ")");
+                    driver = new AndroidDriver(new URL(APPIUM_SERVER_URL), options);
 
-        } catch (MalformedURLException e) {
-            throw new RuntimeException("Invalid Appium server URL: " + APPIUM_SERVER_URL, e);
+                    // Verify driver is working
+                    if (isDriverResponsive()) {
+                        // Set timeouts
+                        driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT);
+                        System.out.println("Android Driver initialized successfully");
+                        return driver;
+                    } else {
+                        throw new RuntimeException("Driver initialized but not responsive");
+                    }
+
+                } catch (Exception e) {
+                    lastException = e;
+                    System.err.println("Driver initialization attempt " + (i + 1) + " failed: " + e.getMessage());
+
+                    if (driver != null) {
+                        try {
+                            driver.quit();
+                        } catch (Exception quitEx) {
+                            // Ignore quit errors during retry
+                        }
+                        driver = null;
+                    }
+
+                    if (i < maxRetries - 1) {
+                        try {
+                            Thread.sleep(2000); // Wait before retry
+                        } catch (InterruptedException ie) {
+                            Thread.currentThread().interrupt();
+                        }
+                    }
+                }
+            }
+
+            throw new RuntimeException("Failed to initialize Android driver after " + maxRetries + " attempts",
+                    lastException);
+
         } catch (Exception e) {
+            driver = null;
             throw new RuntimeException("Failed to initialize Android driver", e);
         }
     }
 
     /**
-     * Get current driver instance
+     * Check if driver is responsive
+     */
+    private static boolean isDriverResponsive() {
+        try {
+            if (driver == null)
+                return false;
+
+            // Try to get current activity - this will fail if driver is not working
+            String activity = driver.currentActivity();
+            return activity != null;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * Get current driver instance with validation
      */
     public static AndroidDriver getDriver() {
         if (driver == null) {
             throw new RuntimeException("Driver not initialized. Call initializeDriver() first.");
         }
+
+        // Additional check to ensure driver is still responsive
+        if (!isDriverResponsive()) {
+            System.err.println("Driver exists but not responsive, reinitializing...");
+            driver = null;
+            throw new RuntimeException("Driver not responsive. Please reinitialize.");
+        }
+
         return driver;
+    }
+
+    /**
+     * Get driver safely without throwing exception
+     */
+    public static AndroidDriver getDriverSafely() {
+        try {
+            return getDriver();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     /**
      * Quit driver and cleanup
      */
     public static void quitDriver() {
-        if (driver != null) {
-            driver.quit();
+        try {
+            if (driver != null) {
+                driver.quit();
+                System.out.println("Android Driver quit successfully");
+            }
+        } catch (Exception e) {
+            System.err.println("Error quitting driver: " + e.getMessage());
+        } finally {
             driver = null;
-            System.out.println("Android Driver quit successfully");
         }
     }
 
     /**
-     * Check if driver is initialized
+     * Check if driver is initialized and responsive
      */
     public static boolean isDriverInitialized() {
-        return driver != null;
+        return driver != null && isDriverResponsive();
+    }
+
+    /**
+     * Force reinitialize driver
+     */
+    public static AndroidDriver reinitializeDriver() {
+        System.out.println("Force reinitializing driver...");
+        quitDriver();
+        return initializeDriver();
+    }
+
+    /**
+     * Get driver with auto-reinitialize if needed
+     */
+    public static AndroidDriver getDriverWithAutoInit() {
+        try {
+            return getDriver();
+        } catch (Exception e) {
+            System.out.println("Driver not available, auto-initializing...");
+            return initializeDriver();
+        }
     }
 }
